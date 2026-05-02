@@ -6,7 +6,7 @@ Django cataloguing backend for [Zasqua](https://zasqua.org), an open-source arch
 
 Zasqua Backend is the cataloguing and data export engine for the Zasqua platform. It manages archival descriptions, entities, and places for five repositories in Colombia and Peru — over 104,000 descriptions and 52,000 entities covering colonial and republican-era judicial, notarial, ecclesiastical, and administrative records.
 
-The backend runs locally as a cataloguing tool. It is never deployed as a public-facing server — instead, it exports structured JSON data that the [static frontend](https://github.com/neogranadina/zasqua-frontend) builds into a fully static site. This architecture follows minimal computing principles: the public site has no runtime server, no database queries at request time, and no ongoing infrastructure costs beyond file hosting.
+The backend runs locally as a cataloguing tool. It is never deployed as a public-facing server — instead, it exports structured JSON data that the [static frontend](https://github.com/neogranadina/zasqua) builds into a fully static site. This architecture follows minimal computing principles: the public site has no runtime server, no database queries at request time, and no ongoing infrastructure costs beyond file hosting.
 
 **Key capabilities:**
 
@@ -133,12 +133,18 @@ flake8
 
 ## Related
 
-- [Zasqua Frontend](https://github.com/neogranadina/zasqua-frontend) — Static site built with Eleventy and Pagefind
+- [Zasqua](https://github.com/neogranadina/zasqua) — Static site built with Hugo and Pagefind
 
 ## License
 
-GPL-3.0. See [LICENSE](LICENSE) for details.
+Zasqua is licensed under the [GNU Affero General Public License v3.0](LICENSE).
 
----
+Anyone may use, modify, and self-host Zasqua under AGPL terms. If you run a modified version as a network service for others, you must publish your modifications under the same license. The license governs the software; the archival content published with Zasqua belongs to the institutions that hold and describe it.
 
-Zasqua is developed by [Neogranadina](https://neogranadina.org) and the [Archives, Memory, and Preservation Lab](https://ampl.clair.ucsb.edu) of the University of California, Santa Barbara.
+## Trademarks
+
+"Zasqua", "Fisqua", "AMPL", and the associated logos are not covered by the AGPL-3.0 license. Forks may use the code freely under AGPL terms but should not present themselves as official Zasqua, Fisqua, or AMPL releases.
+
+## Credits
+
+Zasqua is developed by Juan Cobo Betancourt at the [Archives, Memory, and Preservation Lab](https://ampl.clair.ucsb.edu) (AMPL) of the University of California, Santa Barbara, and [Neogranadina](https://neogranadina.org).

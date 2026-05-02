@@ -2,6 +2,18 @@
 
 All notable changes to the Zasqua backend will be documented in this file. Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Changed
+
+- **Relicensed from GPL-3.0 to AGPL-3.0.** Zasqua now ships under the [GNU Affero General Public License v3.0](LICENSE), bringing it in line with the rest of AMPL's open-source platforms. The practical effect is narrow but pointed: anyone running a modified Zasqua as a network service for third parties must publish their modifications under the same license. Self-hosting institutions have no additional obligation. This change was made by the sole copyright holder; no contributor consent process was required.
+
+### Added
+
+- **Citation file.** The repo now ships a `CITATION.cff` file with author and project metadata, enabling GitHub's "Cite this repository" button. Authors are Juan Cobo Betancourt, with AMPL and Neogranadina credited as institutional contributors.
+- **Trademark notice.** README clarifies that AGPL covers the code, not the names "Zasqua", "Fisqua", or "AMPL".
+- **Credits section in README** names Juan Cobo Betancourt as developer alongside the existing AMPL and Neogranadina institutional credits.
+
 ## [0.4.0] — 2026-03-14
 
 AHRB volume ingest pipeline — tiled 542 volumes (~394K images, ~2.2 TB) to Cloudflare R2 with IIIF manifests and verification tooling.
