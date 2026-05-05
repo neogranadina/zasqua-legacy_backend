@@ -1,5 +1,9 @@
 # Zasqua Backend
 
+> **Archived.** This Django application is archived as of 2026-05-03. [Fisqua](https://fisqua.org) is the source of truth for archival descriptions, entity authorities, place authorities, and their relationships. The Django service is preserved as a cold archive (read-only) against the snapshot below; no further data is written here.
+>
+> Last preserved Django snapshot: `b2://zasqua-export/preservation/django-final-2026-05-03.sql.gz`.
+
 Django cataloguing backend for [Zasqua](https://zasqua.org), an open-source archival platform for hosting and discovering large collections of digitized historical documents.
 
 ## Overview
