@@ -1,22 +1,47 @@
-# Zasqua Backend
+# Zasqua (legacy backend)
 
-> **Archived.** This Django application is archived as of 2026-05-03. [Fisqua](https://fisqua.org) is the source of truth for archival descriptions, entity authorities, place authorities, and their relationships. The Django service is preserved as a cold archive (read-only) against the snapshot below; no further data is written here.
+> **Archived.** This Django application was the original cataloging backend for
+> [Zasqua](https://zasqua.org). It is preserved here, read-only, as a historical
+> reference; it is no longer the source of truth and receives no further data.
 >
-> Last preserved Django snapshot: `b2://zasqua-export/preservation/django-final-2026-05-03.sql.gz`.
+> To make Zasqua easier for others to deploy, what this project did is now split
+> into three parts:
+>
+> - **Cataloging** — [Fisqua](https://fisqua.org), the current tool for creating
+>   and managing archival descriptions, entities, and places.
+> - **The Zasqua engine** — [`UCSB-AMPLab/zasqua`](https://github.com/UCSB-AMPLab/zasqua)
+>   (on npm as [`@ucsb-ampl/zasqua`](https://www.npmjs.com/package/@ucsb-ampl/zasqua)).
+>   Compiles a six-file JSON dataset into a complete static archival website — no
+>   application server, no database, no search backend at request time.
+> - **Instance repositories** — the thin configuration-and-theming repos that
+>   build a site on top of the engine. Neogranadina's is
+>   [`neogranadina/zasqua-neogranadina`](https://github.com/neogranadina/zasqua-neogranadina),
+>   and a fork-and-go starter for building your own is
+>   [`UCSB-AMPLab/zasqua-template`](https://github.com/UCSB-AMPLab/zasqua-template).
+>
+> The engine ships importers (CSV, EAD3, CollectiveAccess), so the six-file
+> dataset it builds from can come from this backend, from Fisqua, or from another
+> cataloging system entirely.
+>
+> You are welcome to fork and develop this further — if you do, we would love to
+> hear about it.
 
-Django cataloguing backend for [Zasqua](https://zasqua.org), an open-source archival platform for hosting and discovering large collections of digitized historical documents.
+## What this was
 
-## Overview
-
-Zasqua Backend is the cataloguing and data export engine for the Zasqua platform. It manages archival descriptions, entities, and places for five repositories in Colombia and Peru — over 104,000 descriptions and 52,000 entities covering colonial and republican-era judicial, notarial, ecclesiastical, and administrative records.
-
-The backend runs locally as a cataloguing tool. It is never deployed as a public-facing server — instead, it exports structured JSON data that the [static frontend](https://github.com/neogranadina/zasqua) builds into a fully static site. This architecture follows minimal computing principles: the public site has no runtime server, no database queries at request time, and no ongoing infrastructure costs beyond file hosting.
+Zasqua Backend was the cataloging and data-export engine for the Zasqua platform.
+It managed archival descriptions, entities, and places for five repositories in
+Colombia and Peru — over 104,000 descriptions and 52,000 entities covering
+colonial and republican-era judicial, notarial, ecclesiastical, and administrative
+records. It ran locally as a cataloging tool and was never deployed as a
+public-facing server; instead it exported structured JSON that the static
+frontend (now [`neogranadina/zasqua-legacy_frontend`](https://github.com/neogranadina/zasqua-legacy_frontend))
+built into a fully static site.
 
 **Key capabilities:**
 
 - MPTT-based hierarchical data model (archival fonds, series, items) following ISAD(G) standards
 - Management commands for data import from CollectiveAccess and CSV sources
-- JSON export pipeline for the static frontend build
+- JSON export pipeline for the static site build
 - IIIF Presentation API v3 manifest generation for digitized materials
 - REST API for archival descriptions, entities, and places
 
@@ -137,7 +162,9 @@ flake8
 
 ## Related
 
-- [Zasqua](https://github.com/neogranadina/zasqua) — Static site built with Hugo and Pagefind
+- [Zasqua engine](https://github.com/UCSB-AMPLab/zasqua) — the deployment-agnostic publishing engine that supersedes the static frontend
+- [Zasqua (legacy frontend)](https://github.com/neogranadina/zasqua-legacy_frontend) — the original static site, also archived
+- [Fisqua](https://fisqua.org) — current cataloging tool
 
 ## License
 
